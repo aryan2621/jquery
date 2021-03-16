@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="Input button" />
+        <br />
+        <input type="file" name="" id="" /><br />
+        <input type="hidden" name="" /><br />
+        <input type="password" name="" id="" /><br />
+        <input type="radio" name="" id="" /><br />
+        <input type="reset" value="
+        " /><br />
+        <input type="range" name="" id="" /><br />
+        <input type="submit" value="" /><br />
+        <input type="text" name="" id="" /><br />
+        <select name="" id="">
+            <option value="">Option</option>
+            <br />
+            <br />
+        </select>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea><br />
+        <button>Button</button><br />
+        <input type="image" src="" alt="" /><br />
+    </form>
+    ------------------------------
+    <br />
+    <div>Hello Rishabh</div>
+    <br />
+    <p>Hello i m the Rishabh Verma 1</p>
+    <p>Hello i m the Rishabh Verma 2</p>
+    <p>Hello i m the Rishabh Verma 3</p>
+    <p>Hello i m the Rishabh Verma 4</p>
+</body>
+<script>
+    $(document).ready(function () {
+        //selecting everything like the *
+        $(":input").css("border", "2px solid red");
+
+        //with the actual input
+        $("input").css("background", "yellow");
+
+        //chaining of the functions
+        $("div")
+            .hide(2000)
+            .html("hello world")
+            .css("border", "2px solid yellow")
+            .show(2000);
+
+        // $("div").fadeToggle(2000)
+
+        //iteration like for loop
+        $("p").each(function (index, element) {
+            let item = $(this)
+            console.log(index + " " + element.textContent)
+            //alternate
+            console.log(index + " " + item.text());
+        });
+
+
+
+
+        //the above thing can be possible in this way too
+        function iteration(index) {
+            let item = $(this)
+            console.log(index + " " + item.text());
+
+        }
+        $("p").each(iteration)
+    });
+</script>
+
+</html>

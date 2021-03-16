@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ajax Requests</title>
+</head>
+
+<body>
+    <div>This is the information form the server <span id="results"></span></div>
+    ------------------------------------
+    <br>
+    <br>
+    <p class="main">
+        This is info from the server
+    </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $.ajax({
+            //     url: "simple.txt",
+        let url = "https://codingaddictla.github.io/random-quotes/quotes.json";
+        $.getJSON(url, gotData)
+        function gotData(data) {
+            console.log(data)
+        }
+            //     dataType: "text",
+            //     method: "GET",
+            //     success: gotData,
+            //     error: noData
+            // })
+            // function gotData(data, status) {
+            //     console.log(data)
+            //     console.log(status)
+
+            //     $('#results').text(data)
+            // }
+            // function noData(xhr) {
+            //     console.log(xhr)
+            //     alert("something failed")
+            // }
+
+            // $("#results").load("simple.txt", function (response, status, xhr) {
+            //     if (status === "error") {
+            //         alert(xhr.status, xhr.statusText)
+            //     }
+            // })
+
+
+        })
+    </script>
+</body>
+
+</html>

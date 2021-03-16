@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .btn {
+            display: block;
+            padding: 20px;
+            font-size: 20px;
+            color: white;
+            background: rgb(90, 207, 90);
+        }
+
+        .simple {
+            padding: 40px;
+            background: red;
+            font-size: 40px;
+            color: blueviolet;
+        }
+
+        .special {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            font-size: 40px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animation in JQUERY</h1>
+    <button id="btn" class="btn">Click here</button>
+    ----------------------------------------
+    <div class="simple">Simple div</div>
+    <div class="special">Special</div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $(".btn").click(function () {
+            // $(".simple").addClass("hide")
+            let div = $(".simple");
+            // if (div.is(":hidden")) {
+            //     // div.show("3000")
+            //     div.show('fast')
+            // } else {
+            //     div.hide("2000")
+            // }
+
+            ///toggle functionality
+            let div2 = $(".special");
+            // div2.toggle(1000)
+
+            //
+            // div2.fadeIn(2000).fadeOut(2000)
+
+
+            // div.fadeToggle(1000)
+            ///fadeto
+            // div2.fadeTo(3000, 0.3)
+
+            //slide
+            // div.slideUp(2000).slideDown(1000)
+
+
+
+            //animation method
+            div.animate({
+                fontSize: "30px",
+                marginLeft: "10px",
+
+            }, 1000)
+
+
+        })
+    })
+</script>
+
+</html>

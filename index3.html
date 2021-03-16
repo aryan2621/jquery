@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .even{
+            width: 150px;
+            border: 2px solid rgb(252, 6, 6);
+        }
+        .odd{
+            width: 150px;
+            border: 2px solid rgb(70, 238, 20);
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="one">parragraph-1</p>
+    <p class="two">parragraph-2</p>
+    <p class="three">parragraph-3</p>
+    <p class="four">parragraph-4</p>
+    <p>Simple paragraph</p>
+
+    ------------------------------
+    <br />
+    <ul>
+        <li>Odd list items</li>
+        <li>Even Items</li>
+        <li>Odd list items</li>
+        <li>Even Items</li>
+        <li>Odd list items</li>
+        <li>Even Items</li>
+        <li>Odd list items</li>
+        <li>Even Items</li>
+    </ul>
+    --------------------------------------
+    <br>
+    <br>
+    <img src="" alt=""><img><br>
+    <img src="" alt=""><img><br>
+    <img src="" alt=""><img><br>
+    <img src="" alt=""><img><br>
+    <img src="" alt=""><img><br>
+
+
+    <script>
+        //concept of attr
+        $(document).ready(function () {
+            let classNames = [];
+            $("p[class]").each(function (index) {
+                classNames[index] = $(this).attr("class");
+            });
+            console.log(classNames.join(","));
+
+            //special things of each function,,
+            $("li").each(function (index, element) {
+                if (index % 2 == 0) {
+                    // $(this).css("background", "red");
+                    $(element).css("background", "red")
+                } else {
+                    $(this).css("background", "blue");
+                }
+            });
+            //attribute function magic
+            $('img').each(function(index){
+                if(index%2==0){
+                    $(this).attr({
+                        src:"https://source.unsplash.com/user/erondu/1600x900",
+                        style:"height:200px",
+                        class:"even"
+
+                    })
+                }
+                else{
+                    $(this).attr({
+                        src:"https://source.unsplash.com/user/erondu/1600x900",
+                        style:"height:100px",
+                        class:"odd"
+
+                    })
+
+                }
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

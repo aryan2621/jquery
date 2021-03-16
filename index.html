@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="./index.js"></script> -->
+    <style>
+        .background {
+            text-align: center;
+            background: black;
+            color: white;
+        }
+
+        .link {
+            background-color: red;
+            font-size: 60px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .good {
+            font-size: large;
+        }
+
+        .external {
+            color: yellow;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div>Hello World</div>
+    --------------------------------------------
+    <br>
+    <span></span>
+    <p></p>
+    <a href="#"></a>
+    <br>
+
+    --------------------------------------------
+    <br>
+
+    <div id="name"></div>
+    <div class="special"></div>
+
+    --------------------------------------------
+    <br>
+    <div class="parent">
+        <span>hyy i m the span</span>
+    </div>
+    <span>hyy i m the span</span>
+    <br>
+    --------------------------------------------
+    <br>
+    <div id="main">
+        <h1>Main haeding</h1>
+        <h2>Subheading</h2>
+        <p>I m the paragraph</p>
+        <h2>Haeding twooo</h2>
+    </div>
+    --------------------------------------------br
+
+    <br>
+    <p>I m the paragraph</p>
+    <p class="special">I m the special paragraph</p>
+    <p>I m the paragraph</p>
+    <p class="special">I m the specail paragraph</p>
+    --------------------------------------------
+    <br>
+    <a href="#">Im the dumyy lik</a><br>
+    <a href="index.html">Im the dumyy lik</a><br>
+    <a href="http://www.google.com">Im googel lik</a><br>
+    <a href="http://instagram.com">Im the instagram dumyy lik</a><br>
+    --------------------------------------------
+    <br>
+    <!-- elements selector
+:first
+:last
+:even
+:odd
+:eq(n)
+:lt(n)
+:gt(n)
+-->
+
+
+    <ul class="first">
+        <li>First Item</li>
+        <li>Second Itme</li>
+        <li>Third Itme</li>
+        <li>Fourh Itme</li>
+
+    </ul>
+    <ul class="second">
+        <li>First Item</li>
+        <li>Second Itme</li>
+        <li>Third Itme</li>
+        <li>Fourh Itme</li>
+
+    </ul>
+    <ul class="third">
+        <li>First Item</li>
+        <li>Second Itme</li>
+        <li>Third Itme</li>
+        <li>Fourh Itme</li>
+
+    </ul>
+
+
+    <script>
+        $(document).ready(function () {
+            // $("div").html('hello codiing addict')
+            // $("span,p,a").html('hello codiing addict')
+            // let result = $("span,a,p").length
+            // console.log(result)
+
+
+            // selecting by id 
+            $("#name").html
+                ("this is the id where we do things")
+            //selection by class
+            // $(".special").html("this is class selector")
+            //slection by the parent
+
+            $('.parent span').css('color', 'red');
+
+            //selection by siblinh=g
+            $("#main h1+h2").css("color", "green")
+
+            //selecting by the attrbutes
+            $("p[class]").addClass("background")
+
+            //selection by the href
+            $('a[href="#"]').addClass("link")
+            $('a[href!="#"]').addClass("good")
+
+            //selection by the regex expression
+            $('a[href^=http]').addClass("external")
+
+
+            //selction of lists
+            $(".first li:first").css('font-size', "40px")
+            $(".first li:last").css('font-size', "40px")
+            $(".second li:even").css("background", "yellow")
+            $(".second li:odd").css("background", "pink")
+
+            $(".third li:eq(2)").css("background", "blue")
+            $(".third li:lt(2)").css("background", "orange")
+            $(".third li:gt(2)").css("background", "lightblue")
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

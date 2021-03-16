@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .append {
+            background: red;
+        }
+
+        .prepend {
+            background: green;
+        }
+
+        .special {
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="append">Append</div>
+    <div id="appendTwo">Append Two</div>
+    --------------------------------------
+
+    <br />
+    <br />
+    <p class="special">The special paragarph</p>
+    <div id="main">I m the maine dive</div>
+    <span>i m the span</span>
+    <script>
+        //concept of append /prepend
+        $(document).ready(function () {
+            let first = $("#append");
+            let second = $("#appendTwo");
+            first.append('<div class="append">Added  after element</div>');
+            first.prepend('<div class="prepend">Added before element</div>');
+
+            //append tow ./prepend to
+
+            $('<div class="append">Added  after element</div>').appendTo(second);
+            $('<div class="prepend">Added before element</div>').prependTo(second);
+
+            //toggling class
+            $(" #main").addClass("special");
+            $("p").removeClass("special");
+            $("p,div,span").click(function () {
+                $(this).toggleClass("special");
+            });
+            //has class
+            console.log($('div').hasClass("special"))
+            //css
+            $('span').css({
+                "color": "red",
+                "font-size": "28px"
+            })
+
+        });
+    </script>
+</body>
+
+</html>

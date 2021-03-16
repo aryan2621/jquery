@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .toggle {
+            background: rgb(248, 7, 7);
+            font-size: large;
+            color: white;
+        }
+
+        .change {
+            font-size: 40px;
+            background: red;
+            border: 1px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        I m the Div
+    </div>
+    <button id="button">
+        Click to Change
+    </button>
+    <br>
+    ------------------------------
+    <br>
+    <input type="text" id="name" name="name" placeholder="Enter the 
+    valuessss">
+    <br>
+    <input type="text" id="lastname" name="lastname" placeholder="Enter the Last Name ">
+    <input type="number" name="phone" id="phone" placeholder="Enter the Number"><br>
+    <input type="email" name="email" id="email" placeholder="Enter the email">
+    <br>
+    ------------------------------
+    <br>
+    <br>
+    <div id="main">
+        Hover over me
+    </div>
+
+    ---------------------------------------------------------------
+    <br>
+    <br>
+    <br>
+    <div id="main-2">
+        Mian times -2
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            //click function
+            $("#button").click(function () {
+                $("div").toggle("yyou clicked finalyyyyyy1!!!")
+            })
+            ///inputs change function same as click
+            $("#name,#lastname,#phone,#email").change(function () {
+                $(this).addClass("toggle")
+            })
+            $("#main").hover(function () {
+                console.log("hovered over me")
+                // alert("hovereeddddddd")
+                // $(this).addClass("toggle")
+            })
+
+            //mouse events
+            // $("#main").mouseenter(function(){
+            //     $(this).css("color","green")
+            // })
+            $("#main").on("click mouseenter hover", function () {
+                // $(this).css("background-color","red")
+            })
+
+            //on events he$e 
+            let mainDiv = $("#main-2");
+            mainDiv.on("mouseover mouseleave", function () {
+                mainDiv.toggleClass("change")
+
+
+            })
+            mainDiv.on("click", function () {
+                mainDiv.html("chnageddddddddd")
+                mainDiv.off("mouseover mouseleave")
+                mainDiv.removeClass("change")
+            })
+
+        })
+    </script>
+</body>
+
+</html>
